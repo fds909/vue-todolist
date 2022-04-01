@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/style.css">
+
+    <title>Vue To Do List</title>
+</head>
+<body>
+    
+    <div id="root">
+        <div class="container">
+            <!-- Heading -->
+            <div class="heading">
+                <h1>Todo List</h1>
+            </div>
+
+            <!-- Add section -->
+            <div class="add">
+                <input type="text" id="todo-text" placeholder="Nuovo Todo"  @keyup.enter="addTodo" />
+                <a class="btn" href="#">Aggiungi</a>
+            </div>
+
+            <!-- List section -->
+            <div id="todo-list">
+                <ul>
+                    <li class="list-item" v-for="(todo, index) in todos">
+                        <div class="list-text">{{ todo.text }}</div>
+                        <a class="remove-item"><i class="fa-solid fa-circle-xmark"></i></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script type="text/javascript" src="js/script.js"></script>
+</body>
+</html>
