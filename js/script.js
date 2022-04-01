@@ -38,7 +38,24 @@ var app = new Vue (
             ],
         },
         methods: {
-            
+            addTodo: function() {
+                const newItem = {
+                    text: this.newTodo,
+                    done: false
+                }
+
+                if (!this.todos.includes(newItem) && (newItem.text != '')) {
+                    this.todos.push(newItem);
+                }
+
+                this.newTodo = '';
+            },
+            removeItem: function(index) {
+                this.todos.splice(index, 1);
+            },
+            todoDone: function(index) {
+                this.todos[index].done = true;
+            }
         }
     }
 )

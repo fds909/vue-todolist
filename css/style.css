@@ -65,3 +65,8 @@ ul {
 .remove-item {
     color: red;
 }
+
+/* Testo sbarrato applicato dopo il click su una todo */
+.done {
+    text-decoration: line-through;
+}

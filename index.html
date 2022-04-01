@@ -20,16 +20,16 @@
 
             <!-- Add section -->
             <div class="add">
-                <input type="text" id="todo-text" placeholder="Nuovo Todo"  @keyup.enter="addTodo" />
-                <a class="btn" href="#">Aggiungi</a>
+                <input type="text" id="todo-text" placeholder="Nuovo Todo" v-model="newTodo" @keyup.enter="addTodo" />
+                <a class="btn" href="#" @click="addTodo">Aggiungi</a>
             </div>
 
             <!-- List section -->
             <div id="todo-list">
                 <ul>
                     <li class="list-item" v-for="(todo, index) in todos">
-                        <div class="list-text">{{ todo.text }}</div>
-                        <a class="remove-item"><i class="fa-solid fa-circle-xmark"></i></a>
+                        <div id="list-text" :class=" (todo.done == true) ? 'done' : '' " @click="todoDone(index)" >{{ todo.text }}</div>
+                        <a class="remove-item" @click="removeItem(index)"><i class="fa-solid fa-circle-xmark"></i></a>
                     </li>
                 </ul>
             </div>
